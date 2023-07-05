@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "nHAmLhXu6NvaovU6E+MWNIFKWna9lScVWB0uf+owqDb69Osf0Vz58jE4H0uVwmDGeclnR9XSGcx7OxstbyXkCQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\user\\Desktop\\Dyplom\\WpfApp8\\WpfApp8\\WpfApp8.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,186 @@
+﻿<Window x:Class="WpfApp8.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp8"
+        mc:Ignorable="d"
+        Title="Quiz APP" Height="600" Width="950" MinHeight="585" MinWidth="910">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/Background quiz.png"/>
+        </Grid.Background>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.5*" MinWidth="105" MaxWidth="105"/>
+            <ColumnDefinition Width="0.5*" MinWidth="105" MaxWidth="105"/>
+            <ColumnDefinition Width="0.5*" MinWidth="105" MaxWidth="105"/>
+            <ColumnDefinition Width="0.5*" MinWidth="105" MaxWidth="105"/>
+            <ColumnDefinition Width="0.5*" MinWidth="105" MaxWidth="105"/>
+            <ColumnDefinition Width="0.5*" MinWidth="105" MaxWidth="105"/>
+            <ColumnDefinition Width="0.5*" MinWidth="105" MaxWidth="105"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.4*" />
+            <RowDefinition Height="0.6*" MinHeight="120" MaxHeight="120" />
+            <RowDefinition Height="0.7*" MinHeight="0"  />
+            <RowDefinition Height="0.7*" MinHeight="0" />
+            <RowDefinition Height="0.6*" MinHeight="50" MaxHeight="100"/>
+            <RowDefinition Height="0.4*" />
+        </Grid.RowDefinitions>
+
+        <GridSplitter Grid.Row="2" Grid.Column="2"  Height="3" Background="#FFBF0CFF" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.ColumnSpan="6" />
+        <GridSplitter Grid.Row="3" Grid.Column="2"  Height="3" Background="#FFBF0CFF" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.ColumnSpan="6" />
+        <GridSplitter Grid.Row="3" Grid.Column="2"  Height="3" Background="#FFBF0CFF" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.ColumnSpan="6" />
+        <GridSplitter Grid.Row="4" Grid.Column="2"  Height="3" Background="#FFBF0CFF" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.ColumnSpan="6" />
+
+        <GridSplitter Grid.Column="4" Grid.Row="1" Grid.RowSpan="3" Width="3" Background="#FF04FFFF" HorizontalAlignment="Right" VerticalAlignment="Stretch"  Margin="0,30,0,0"/>
+
+
+        <Label  Content="Answer the questions and we will help you choose a gift" Grid.Row="0" Grid.Column="2"  Grid.ColumnSpan="6" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="#FF0AFFED" FontFamily="Cascadia Mono"  Margin="0,-15,0,0" FontSize="16"/>
+
+
+        <StackPanel x:Name="question1"  Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <TextBlock Text="1) What is the person's age?" FontWeight="Bold" Foreground="#FFFCFF00" FontFamily="Century" FontSize="14"/>
+            <TextBox x:Name="ageTextBox" FontWeight="Bold"  Margin="0,10,0,0" Foreground="Blue" >
+                <TextBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFE0FF00" Offset="1"/>
+                        <GradientStop Color="#FFF7F7F7" Offset="0.611"/>
+                        <GradientStop Color="White" Offset="0.253"/>
+                    </LinearGradientBrush>
+                </TextBox.Background>
+                <TextBox.SelectionTextBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.SelectionTextBrush>
+            </TextBox>
+        </StackPanel>
+
+
+        <StackPanel x:Name="question2" Grid.Row="2" Grid.Column="2"  Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Left" >
+            <TextBlock Text="2) What type of interests does this person have?"  FontWeight="Bold" Foreground="#FFFCFF00" FontFamily="Century" FontSize="14"  TextWrapping="Wrap" Margin="0,3,0,0"/>
+
+            <RadioButton x:Name="MusicButton" Content="Music" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#FF00BEFF"  FontFamily="Century" FontSize="14" Margin="0,5,0,0" FontWeight="Bold" Checked="MusicButton_Checked"/>
+
+            <RadioButton x:Name="TravelingButton" Content="Traveling" HorizontalAlignment="Left" VerticalAlignment="Center"  Foreground="#FF00BEFF"  FontFamily="Century" FontSize="14" Margin="0,5,0,0" FontWeight="Bold" Checked="TravelingButton_Checked" />
+
+            <RadioButton x:Name="SportButton" Content="Sport" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="#FF11B2FF"  FontFamily="Century" FontSize="14" Margin="0,5,0,5" FontWeight="Bold" Checked="SportButton_Checked"/>
+        </StackPanel>
+
+
+
+        <StackPanel x:Name="question3" Grid.Row="3" Grid.Column="2"  VerticalAlignment="Center" HorizontalAlignment="Left" Grid.ColumnSpan="3">
+            <TextBlock Text="3) The person to whom you are going to give a gift prefers:" HorizontalAlignment="Left" Grid.Column="2" Grid.Row="3" VerticalAlignment="Top" Grid.ColumnSpan="3" Grid.RowSpan="1"  Foreground="#FFFCFF00" FontFamily="Century" FontSize="14"  TextBlock.TextWrapping="Wrap" Margin="0,5,10,0" FontWeight="Bold" />
+
+            <RadioButton  x:Name="EmotionsButton" Content="Emotions" HorizontalAlignment="Left" VerticalAlignment="Center"  FontFamily="Century" FontSize="14" Margin="0,10,0,0" FontWeight="Bold" Foreground="#FFFF8A00" Checked="EmotionsButton_Checked" />
+
+            <RadioButton  x:Name="ThingsButton" Content="Things" HorizontalAlignment="Left" VerticalAlignment="Center"  Foreground="#FFFF8A00"  FontFamily="Century" FontSize="14" Margin="0,5,0,0" FontWeight="Bold" Checked="ThingsButton_Checked"/>
+
+            <RadioButton  x:Name="NoInfo" Content="I don't know" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="#FFFF8A00"  FontFamily="Century" FontSize="14" Margin="0,5,0,5" FontWeight="Bold" Checked="NoInfo_Checked"/>
+        </StackPanel>
+
+
+
+        <TextBlock Text="Choose your gift right now:" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="2" FontFamily="Century" FontSize="16" TextBlock.TextWrapping="Wrap" FontWeight="Bold"  VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,10,0,0">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFC00FF" Offset="0.562"/>
+                    <GradientStop Color="#FF00FFAC" Offset="0.549"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+
+        <Button Content="Find Gift" Click="FindGift_Click" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" FontFamily="Century" FontSize="18" FontWeight="Bold" Padding="5" Margin="0,10,0,0">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF1600FF"/>
+                    <GradientStop Color="#FF5FFF00" Offset="1"/>
+                    <GradientStop Color="#FF54FFF9" Offset="0.33"/>
+                    <GradientStop Color="#FFFFBB25" Offset="0.694"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <TextBlock x:Name="resultTextBlock"  Grid.Row="4" Grid.Column="4" HorizontalAlignment="Left"  VerticalAlignment="Top" Grid.ColumnSpan="3" Text="Result" FontWeight="Bold" Foreground="Black" FontFamily="Century" Padding="3" Margin="20,10,0,0" TextWrapping="Wrap" Visibility="Hidden">
+            <TextBlock.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF03FF00" Offset="0.135"/>
+                    <GradientStop Color="#FF03FF00" Offset="0.924"/>
+                    <GradientStop Color="#FFDBF521" Offset="0.806"/>
+                    <GradientStop Color="#FFD8FA4C" Offset="0.247"/>
+                </LinearGradientBrush>
+            </TextBlock.Background>
+        </TextBlock>
+
+
+
+        <StackPanel x:Name="question" Grid.Row="1" Grid.Column="5"  Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="50,10,0,0" >
+
+            <TextBlock Text="4) Who do you want to give a gift to?"  Grid.ColumnSpan="3" FontWeight="Bold" Foreground="#FFFCFF00" FontFamily="Century" FontSize="14" />
+
+            <RadioButton x:Name="MamButton" Content="Mother" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#FF54F698"  FontFamily="Century" FontSize="14" Margin="0,15,0,0" Checked="MamButton_Checked" FontWeight="Bold"/>
+
+            <RadioButton x:Name="GirlfriendButton" Content="Girlfriend" HorizontalAlignment="Left" VerticalAlignment="Center"  Foreground="#FF54F698"  FontFamily="Century" FontSize="14" Margin="0,5,0,0" FontWeight="Bold" Checked="GirlfriendButton_Checked" />
+
+            <RadioButton x:Name="GrandparentsButton" Content="Grandparents" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="#FF54F698"  FontFamily="Century" FontSize="14" Margin="0,5,0,0" FontWeight="Bold" Checked="GrandparentsButton_Checked"/>
+
+            <RadioButton x:Name="FatherButton" Content="Father " HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="#FF54F698"  FontFamily="Century" FontSize="14" Margin="0,-55,9,0" Checked="FatherButton_Checked" FontWeight="Bold"/>
+            <RadioButton x:Name="BoyFrindButton" Content="Boyfrind" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="#FF54F698"  FontFamily="Century" FontSize="14" Margin="0,-37,0,0" FontWeight="Bold" Checked="BoyFrindButton_Checked"/>
+            <RadioButton x:Name="FrindsButton" Content="Frinds" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="#FF54F698"  FontFamily="Century" FontSize="14" Margin="0,-17,14,0" FontWeight="Bold" Checked="FrindsButton_Checked"/>
+        </StackPanel>
+
+
+
+        <StackPanel x:Name="question5" Grid.Row="2"  Grid.Column="5"  Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="50,7,0,7"  Width="260">
+            <TextBlock Text="5) What is the occasion for the gift?"  FontWeight="Bold" Foreground="#FFFCFF00" FontFamily="Century" FontSize="14" />
+
+            <RadioButton x:Name="BirthdayButton" Content="Birthday" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#FFFF00D4"  FontFamily="Century" FontSize="14" Margin="0,15,0,0" Checked="BirthdayButton_Checked" FontWeight="Bold"/>
+
+            <RadioButton x:Name="NewYearButton" Content="New Year" HorizontalAlignment="Left" VerticalAlignment="Center"  Foreground="#FFFF00D4"  FontFamily="Century" FontSize="14" Margin="0,5,0,0" FontWeight="Bold" Checked="NewYearButton_Checked" />
+
+            <RadioButton x:Name="AnniversaryButton" Content="Anniversary" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="#FFFF00D4"  FontFamily="Century" FontSize="14" Margin="0,5,0,0" FontWeight="Bold" Checked="AnniversaryButton_Checked"/>
+
+            <RadioButton x:Name="AnotherButton" Content="On another occasion" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="#FFFF00D4"  FontFamily="Century" FontSize="14" Margin="0,-57,0,0" FontWeight="Bold" Checked="AnotherButton_Checked"/>
+        </StackPanel>
+
+        <Image x:Name="GiftsImage" Source="/Images/gifts.png"  Grid.Row="4" Grid.Column="7" HorizontalAlignment="Left"   VerticalAlignment="Center"  Visibility="Collapsed" Grid.ColumnSpan="2" Grid.RowSpan="1" Height="85" Width="142" >
+            <Image.OpacityMask>
+                <ImageBrush ImageSource="/Images/gifts.png"/>
+            </Image.OpacityMask>
+        </Image>
+
+        <TextBlock Text=" Or describe the person's hobby" Grid.Row="3" Grid.Column="5"  Grid.ColumnSpan="3" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,10,0,0" FontFamily="Century" FontSize="16"  TextBlock.TextWrapping="Wrap"  FontWeight="Bold">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF07D2FF" Offset="0.566"/>
+                    <GradientStop Color="White" Offset="0.521"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+       
+        <TextBox x:Name="DescribtionTextBox" Grid.Column="5"  Grid.Row="3" TextWrapping="Wrap" Text="" MinWidth="100" MaxWidth="280" MaxHeight="100" Margin="20,40,0,10" VerticalAlignment="Top" HorizontalAlignment="Left"  Grid.ColumnSpan="3"  Foreground="White" FontFamily="Century" FontWeight="Bold" FontStyle="Italic" Padding="1" >
+            <TextBox.Background >
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0.139"/>
+                    <GradientStop Color="#FF0593FF" Offset="0.698"/>
+                    <GradientStop Color="#FF0593FF" Offset="0.295"/>
+                    <GradientStop Color="Black" Offset="0.878"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+
+        <Button x:Name="describeButton" Grid.Column="7" HorizontalAlignment="Right" VerticalAlignment="Top" Height="30" Grid.Row="3" Width="30" Click="describeButton_Click" Margin="0,7,10,0" BorderBrush="Black">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/Search.jpg"/>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Window>
